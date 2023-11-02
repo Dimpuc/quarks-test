@@ -14,9 +14,14 @@
   -webkit-text-size-adjust: 100%;
 }
 
+html {
+  font-size: 10px;
+}
+
 body {
   margin: 0;
   padding: 10px;
+  background-color: #242530;
   min-width: 320px;
   min-height: 100vh;
 }

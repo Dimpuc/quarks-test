@@ -20,7 +20,9 @@ export const Input = ({
   endIcon,
   type,
   onChange,
+  register,
   errors,
+  name,
   required = false,
   readOnly,
   disabled,
@@ -36,11 +38,13 @@ export const Input = ({
           required={required}
           disabled={disabled}
           endIcon={!endIcon}
+          name={name}
           readOnly={readOnly}
           hasError={errors[id]}
           correct={!errors[id] && value?.length}
           onChange={onChange}
           type={type}
+          {...register(name)}
         />
         {endIcon && <ImgWrapper>{endIcon}</ImgWrapper>}
         {!errors[id] && value?.length && !endIcon ? (
@@ -54,7 +58,9 @@ export const Input = ({
           </ImgWrapper>
         )}
       </InputWrapper>
-      {errors?.[id]?.message && <ErrorMessage>error</ErrorMessage>}
+      {errors?.[id]?.message && (
+        <ErrorMessage>{errors?.[id]?.message}</ErrorMessage>
+      )}
     </Wrapper>
   );
 };

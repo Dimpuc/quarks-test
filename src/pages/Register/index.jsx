@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FirstStep } from "../../features/RegisterSteps/FirstStep";
 import { SecondStep } from "../../features/RegisterSteps/SecondStep";
 import { Container } from "./styles";
+import { ThirdStep } from "../../features/RegisterSteps/ThirdStep";
 
 export const Register = () => {
   const [user, setUser] = useState({
@@ -27,15 +28,26 @@ export const Register = () => {
     }
   };
 
+  const registerHandler = (data) => {
+    if (data) {
+      setUser({
+        ...user,
+        ...data,
+      });
+    }
+  };
   console.log(user);
 
   return (
     <Container>
-      {!user.gender && <FirstStep onClick={handleFirstStep} />}
+      <ThirdStep onSubmit={registerHandler} />
+      {/* {!user.gender && <FirstStep onClick={handleFirstStep} />}
       {user.gender && !user.datingPurpose && (
         <SecondStep onClick={handleSecondStep} />
       )}
-      {user.gender && user.datingPurpose && <div>Three step</div>}
+      {user.gender && user.datingPurpose && (
+        <ThirdStep onSubmit={registerHandler} />
+      )} */}
     </Container>
   );
 };

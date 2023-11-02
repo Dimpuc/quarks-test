@@ -9,7 +9,7 @@ const FeedbackBlock = ({ icon, text, data, usersName }) => {
     <Wrapper>
       <StyledIcon src={Group} alt="group" />
       <UsersInfo>
-        {icon}
+        <img src={icon} />
         <UsersDetails>
           {usersName}
           <span>{data}</span>

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   padding: 2rem calc(2rem + 1px) 2rem 2rem;
   border-radius: 10px;
-  max-width: 287px;
+  max-width: 400px;
   box-sizing: border-box;
   background-color: #2f303e;
   position: relative;

@@ -4,7 +4,7 @@ export const Wrapper = styled.div``;
 
 export const Label = styled.label`
   font-weight: 700;
-  font-size: 14px;
+  font-size: 1.4rem;
   line-height: 16.41px;
   font-family: "Roboto", sans-serif;
   color: #fff;
@@ -25,7 +25,7 @@ export const ImgWrapper = styled.div`
 
 export const ErrorMessage = styled.div`
   color: #ff5e5e;
-  font-size: 12px;
+  font-size: 1.2rem;
   font-weight: 400;
   line-height: 14.06px;
   font-family: "Roboto", sans-serif;
@@ -42,7 +42,7 @@ export const InputStyle = styled.input`
   outline: none;
 
   font-weight: 400;
-  font-size: 14px;
+  font-size: 1.4rem;
   line-height: 16.41px;
 
   padding: calc(1rem + 3px) 16px calc(1rem + 4px) 16px;

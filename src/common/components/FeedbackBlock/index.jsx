@@ -17,8 +17,8 @@ const FeedbackBlock = ({ icon, text, data, usersName }) => {
       </UsersInfo>
       <ReactReadMoreReadLess
         charLimit={200}
-        readMoreText={"Read more"}
-        readLessText={"Read less"}
+        readMoreText={"Читать полностю"}
+        readLessText={"Скрыть"}
         readMoreClassName="read-more-less--more"
         readLessClassName="read-more-less--less"
       >

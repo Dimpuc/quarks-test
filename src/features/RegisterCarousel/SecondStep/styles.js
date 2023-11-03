@@ -4,13 +4,13 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 16px;
+  padding: 1.6rem;
 `;
 
 export const Title = styled.h3`
   font-weight: 700;
   text-align: center;
-  font-size: 16px;
+  font-size: 1.6rem;
   line-height: 18.75px;
   font-family: "Roboto", sans-serif;
   margin: 0;
@@ -22,7 +22,8 @@ export const List = styled.ul`
   width: 100%;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
+  gap: 1.4rem;
+  margin: 1.6rem 0px 0px 0px;
   padding: 0;
   list-style-type: none;
 
@@ -34,11 +35,11 @@ export const List = styled.ul`
 `;
 
 export const SmallText = styled.p`
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 400;
   line-height: 16.41px;
   text-align: center;
   color: #aab2bd;
-  margin: 59px 0px 0px 0px;
+  margin: 5.9rem 0px 0px 0px;
   font-family: "Roboto", sans-serif;
 `;

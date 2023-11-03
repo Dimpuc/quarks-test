@@ -7,11 +7,12 @@ export const Wrapper = styled.div`
   box-sizing: border-box;
   background-color: #2f303e;
   position: relative;
+  font-family: "Roboto", sans-serif;
 
   color: #aab2bd;
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 400;
-  line-height: 19px;
+  line-height: 1.9rem;
   text-overflow: ellipsis;
 `;
 
@@ -22,9 +23,9 @@ export const StyledIcon = styled.img`
 
 export const UsersInfo = styled.div`
   display: flex;
-  gap: 10px;
+  gap: 1rem;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 1.2rem;
 `;
 
 export const UsersDetails = styled.div`
@@ -33,23 +34,10 @@ export const UsersDetails = styled.div`
   gap: 3px;
   color: #ffffff;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 1.2rem;
   line-height: 14.06px;
   span {
-    color: #656d78;
     font-weight: 400;
-    font-size: 12px;
-    line-height: 14.06px;
+    color: #656d78;
   }
-`;
-
-export const MainText = styled.p`
-  color: #aab2bd;
-  font-size: 14px;
-  padding: 0;
-  overflow: hidden;
-  margin: 0;
-  font-weight: 400;
-  line-height: 19px;
-  text-overflow: ellipsis;
 `;

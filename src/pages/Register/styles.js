@@ -9,9 +9,9 @@ export const Container = styled.div`
 export const IconButton = styled.button`
   position: absolute;
   z-index: 100;
-  left: 10px;
-  top: 10px;
-  font-size: 25px;
+  left: 1rem;
+  top: 1rem;
+  font-size: 2.5rem;
   cursor: pointer;
   color: grey;
   border: none;

@@ -7,10 +7,7 @@ import { RegisterCarousel } from "../../features/RegisterCarousel";
 
 export const Register = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [user, setUser] = useState({
-    gender: "",
-    datingPurpose: "",
-  });
+  const [user, setUser] = useState({});
 
   const nextSlide = () => {
     setCurrentSlide((currentSlide + 1) % customComponents.length);

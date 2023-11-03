@@ -4,14 +4,14 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px;
+  padding: 1rem;
   box-sizing: border-box;
 `;
 
 export const Title = styled.h3`
   font-weight: 700;
   text-align: center;
-  font-size: 24px;
+  font-size: 2.4rem;
   line-height: 26.01px;
   font-family: "Jost", sans-serif;
   margin: 0;
@@ -21,15 +21,15 @@ export const ButtonWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 1.2rem;
   width: 100%;
-  margin-top: 12px;
-  margin-bottom: 20px;
+  margin-top: 1.2rem;
+  margin-bottom: 2rem;
 `;
 export const FeedbackList = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 2rem;
   padding: 0;
   list-style-type: none;
 `;

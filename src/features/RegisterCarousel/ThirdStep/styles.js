@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   align-items: center;
   padding: 24px;
   box-sizing: border-box;
+  gap: 12px;
 `;
 
 export const TitleWrapper = styled.div`
@@ -35,6 +36,7 @@ export const Title = styled.h3`
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
+  max-width: 400px;
   gap: 18px;
   width: 100%;
 `;

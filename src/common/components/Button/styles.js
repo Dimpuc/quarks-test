@@ -3,12 +3,13 @@ import styled from "styled-components";
 export const StyledButton = styled.button`
   display: flex;
   align-items: center;
+  font-family: "Roboto", sans-serif;
   justify-content: center;
   background: linear-gradient(180deg, #ffb45c 0%, #ffa438 100%);
   border: none;
   border-radius: 10px;
   padding-top: 0.9rem;
-  gap: 14px;
+  gap: 1.4rem;
   cursor: pointer;
   padding-bottom: calc(0.9rem + 1px);
   max-width: 400px;
@@ -20,7 +21,7 @@ export const StyledButton = styled.button`
   }
 
   p {
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: 500;
     line-height: 23.12px;
     margin: 0;

@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
 
 export const Label = styled.label`
   font-weight: 700;
-  font-size: 14px;
+  font-size: 1.4rem;
   line-height: 16.41px;
   font-family: "Roboto", sans-serif;
   color: #fff;
@@ -19,7 +19,7 @@ export const Label = styled.label`
 export const StyledSelect = styled.select`
   width: 100%;
   border: 1px solid #aab2bd80;
-  margin-top: 6px;
+  margin-top: 0.6rem;
   background-color: #c7c8d0;
   color: #242530;
   box-sizing: border-box;
@@ -48,7 +48,7 @@ export const StyledSelect = styled.select`
   color: #a0a8b4;
 
   font-weight: 400;
-  font-size: 14px;
+  font-size: 1.4rem;
   line-height: 16.41px;
 
   padding: calc(1rem + 3px) 16px calc(1rem + 4px) 16px;

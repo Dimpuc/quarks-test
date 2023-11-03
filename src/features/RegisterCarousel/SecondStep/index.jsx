@@ -3,7 +3,7 @@ import { Wrapper, Title, List, SmallText } from "./styles";
 import { QuizButton } from "../../../common/components/QuizButton";
 import { datingPurposeMock } from "./mocks";
 
-export const SecondStep = ({ onClick }) => {
+const SecondStep = ({ onClick }) => {
   return (
     <Wrapper>
       <Title>Цель знакомства:</Title>
@@ -23,3 +23,5 @@ export const SecondStep = ({ onClick }) => {
     </Wrapper>
   );
 };
+
+export { SecondStep };

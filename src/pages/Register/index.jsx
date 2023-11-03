@@ -1,14 +1,20 @@
 import { useState } from "react";
-import { FirstStep } from "../../features/RegisterSteps/FirstStep";
-import { SecondStep } from "../../features/RegisterSteps/SecondStep";
+import { FirstStep } from "../../features/RegisterCarousel/FirstStep";
+import { SecondStep } from "../../features/RegisterCarousel/SecondStep";
 import { Container } from "./styles";
-import { ThirdStep } from "../../features/RegisterSteps/ThirdStep";
+import { ThirdStep } from "../../features/RegisterCarousel/ThirdStep";
+import { RegisterCarousel } from "../../features/RegisterCarousel";
 
 export const Register = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
   const [user, setUser] = useState({
     gender: "",
     datingPurpose: "",
   });
+
+  const nextSlide = () => {
+    setCurrentSlide((currentSlide + 1) % customComponents.length);
+  };
 
   const handleFirstStep = (gender) => {
     if (gender) {
@@ -16,6 +22,8 @@ export const Register = () => {
         ...user,
         gender,
       });
+
+      nextSlide();
     }
   };
 
@@ -25,6 +33,8 @@ export const Register = () => {
         ...user,
         datingPurpose,
       });
+
+      nextSlide();
     }
   };
 
@@ -38,16 +48,18 @@ export const Register = () => {
   };
   console.log(user);
 
+  const customComponents = [
+    <FirstStep key={1} onClick={handleFirstStep} />,
+    <SecondStep key={2} onClick={handleSecondStep} />,
+    <ThirdStep key={3} onSubmit={registerHandler} />,
+  ];
+
   return (
     <Container>
-      {/* <ThirdStep onSubmit={registerHandler} /> */}
-      {!user.gender && <FirstStep onClick={handleFirstStep} />}
-      {user.gender && !user.datingPurpose && (
-        <SecondStep onClick={handleSecondStep} />
-      )}
-      {user.gender && user.datingPurpose && (
-        <ThirdStep onSubmit={registerHandler} />
-      )}
+      <RegisterCarousel
+        currentSlide={currentSlide}
+        components={customComponents}
+      />
     </Container>
   );
 };

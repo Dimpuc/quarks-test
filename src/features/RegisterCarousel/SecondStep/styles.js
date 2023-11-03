@@ -4,6 +4,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 16px;
 `;
 
 export const Title = styled.h3`

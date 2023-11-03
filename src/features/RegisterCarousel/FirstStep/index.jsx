@@ -12,7 +12,7 @@ import MIcon from "../../../assets/icons/m_icon.svg";
 import FIcon from "../../../assets/icons/f_icon.svg";
 import { feedbackListMocks } from "./mocks";
 
-export const FirstStep = ({ onClick }) => {
+const FirstStep = ({ onClick }) => {
   return (
     <Wrapper>
       <Title>Наибольшая база анкет для знакомств</Title>
@@ -43,3 +43,5 @@ export const FirstStep = ({ onClick }) => {
     </Wrapper>
   );
 };
+
+export { FirstStep };

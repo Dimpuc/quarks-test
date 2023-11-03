@@ -7,7 +7,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { schemaRegister } from "./schema";
 import { SelectDate } from "../../../common/components/Select";
 
-export const ThirdStep = ({ onSubmit }) => {
+const ThirdStep = ({ onSubmit }) => {
   const {
     register,
     handleSubmit,
@@ -57,3 +57,5 @@ export const ThirdStep = ({ onSubmit }) => {
     </Wrapper>
   );
 };
+
+export { ThirdStep };

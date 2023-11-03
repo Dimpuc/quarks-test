@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Wrapper, Title, List, SmallText } from "./styles";
-import { QuizButton } from "../../../common/components/QuizButton";
+import { Button } from "../../../common/components/Button";
 import { datingPurposeMock } from "./mocks";
 
 const SecondStep = ({ onClick }) => {
@@ -10,7 +10,7 @@ const SecondStep = ({ onClick }) => {
       <List>
         {datingPurposeMock.map(({ id, datingPurpose }) => (
           <li key={id}>
-            <QuizButton
+            <Button
               onClick={() => onClick(datingPurpose)}
               text={datingPurpose}
             />

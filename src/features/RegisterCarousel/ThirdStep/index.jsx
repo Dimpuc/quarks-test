@@ -1,11 +1,13 @@
 /* eslint-disable react/prop-types */
-import { Input } from "../../../common/components/Input";
-import { Form, Title, TitleWrapper, Wrapper } from "./styles";
-import { QuizButton } from "../../../common/components/QuizButton";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { schemaRegister } from "./schema";
+
+import { Input } from "../../../common/components/Input";
+import { Button } from "../../../common/components/Button";
 import { SelectDate } from "../../../common/components/Select";
+import { schemaRegister } from "./schema";
+
+import { Form, Title, TitleWrapper, Wrapper } from "./styles";
 
 const ThirdStep = ({ onSubmit }) => {
   const {
@@ -52,7 +54,7 @@ const ThirdStep = ({ onSubmit }) => {
           errors={errors}
           register={register}
         />
-        <QuizButton text="СОЗДАТЬ" type="submit" />
+        <Button text="СОЗДАТЬ" type="submit" />
       </Form>
     </Wrapper>
   );

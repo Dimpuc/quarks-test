@@ -1,4 +1,6 @@
-.quiz_button {
+import styled from "styled-components";
+
+export const StyledButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,16 +15,15 @@
 
   width: 100%;
   box-shadow: 0px 0px 10px 0px #ffa23540;
-}
+  &:active {
+    background: #e3983f;
+  }
 
-.quiz_button:active {
-  background: #e3983f;
-}
-
-.quiz_button > p {
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 23.12px;
-  margin: 0;
-  color: #242530;
-}
+  p {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 23.12px;
+    margin: 0;
+    color: #242530;
+  }
+`;

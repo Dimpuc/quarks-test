@@ -16,42 +16,30 @@ export const Register = () => {
     setCurrentSlide((currentSlide + 1) % customComponents.length);
   };
 
-  const handleFirstStep = (gender) => {
-    if (gender) {
-      setUser({
-        ...user,
-        gender,
-      });
+  const handleRegister = (data) => {
+    const userUpdates = {
+      0: { gender: data },
+      1: { datingPurpose: data },
+      2: { ...data },
+    };
 
+    setUser((prevUser) => ({
+      ...prevUser,
+      ...userUpdates[currentSlide],
+    }));
+
+    if (currentSlide < 2) {
       nextSlide();
+    } else {
+      // call to register api
+      console.log(user);
     }
   };
-
-  const handleSecondStep = (datingPurpose) => {
-    if (datingPurpose) {
-      setUser({
-        ...user,
-        datingPurpose,
-      });
-
-      nextSlide();
-    }
-  };
-
-  const registerHandler = (data) => {
-    if (data) {
-      setUser({
-        ...user,
-        ...data,
-      });
-    }
-  };
-  console.log(user);
 
   const customComponents = [
-    <FirstStep key={1} onClick={handleFirstStep} />,
-    <SecondStep key={2} onClick={handleSecondStep} />,
-    <ThirdStep key={3} onSubmit={registerHandler} />,
+    <FirstStep key={1} onClick={handleRegister} />,
+    <SecondStep key={2} onClick={handleRegister} />,
+    <ThirdStep key={3} onSubmit={handleRegister} />,
   ];
 
   return (

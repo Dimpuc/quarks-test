@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { QuizButton } from "../../../common/components/QuizButton";
+import { Button } from "../../../common/components/Button";
 import { FeedbackBlock } from "../../../common/components/FeedbackBlock";
 import {
   ButtonWrapper,
@@ -17,12 +17,12 @@ const FirstStep = ({ onClick }) => {
     <Wrapper>
       <Title>Наибольшая база анкет для знакомств</Title>
       <ButtonWrapper>
-        <QuizButton
+        <Button
           text="Я мужчина"
           icon={<img src={MIcon} />}
           onClick={() => onClick("men")}
         />
-        <QuizButton
+        <Button
           text="Я женщина"
           icon={<img src={FIcon} />}
           onClick={() => onClick("woman")}

@@ -5,6 +5,7 @@ import { QuizButton } from "../../../common/components/QuizButton";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { schemaRegister } from "./schema";
+import { SelectDate } from "../../../common/components/Select";
 
 export const ThirdStep = ({ onSubmit }) => {
   const {
@@ -32,6 +33,7 @@ export const ThirdStep = ({ onSubmit }) => {
           errors={errors}
           register={register}
         />
+        <SelectDate />
         <Input
           label="Придумайте пароль:"
           placeholder="Минимум 8 символов"

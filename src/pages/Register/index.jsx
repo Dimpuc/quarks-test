@@ -40,14 +40,14 @@ export const Register = () => {
 
   return (
     <Container>
-      <ThirdStep onSubmit={registerHandler} />
-      {/* {!user.gender && <FirstStep onClick={handleFirstStep} />}
+      {/* <ThirdStep onSubmit={registerHandler} /> */}
+      {!user.gender && <FirstStep onClick={handleFirstStep} />}
       {user.gender && !user.datingPurpose && (
         <SecondStep onClick={handleSecondStep} />
       )}
       {user.gender && user.datingPurpose && (
         <ThirdStep onSubmit={registerHandler} />
-      )} */}
+      )}
     </Container>
   );
 };

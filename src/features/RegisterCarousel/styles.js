@@ -5,6 +5,11 @@ export const CarouselWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(36, 37, 48, 0) 30.21%,
+    #242530 95.83%
+  );
 `;
 
 export const CarouselContent = styled.div`

@@ -4,6 +4,7 @@ import { CarouselContent, CarouselSlide, CarouselWrapper } from "./styles";
 const RegisterCarousel = ({ components, currentSlide }) => {
   return (
     <CarouselWrapper>
+      {/* <BackgroundImage /> */}
       <CarouselContent>
         {components.map((component, index) => (
           <CarouselSlide

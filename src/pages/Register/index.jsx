@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FirstStep } from "../../features/RegisterCarousel/FirstStep";
 import { SecondStep } from "../../features/RegisterCarousel/SecondStep";
-import { Container, IconButton } from "./styles";
+import { BackgroundImage, Container, IconButton } from "./styles";
 import { ThirdStep } from "../../features/RegisterCarousel/ThirdStep";
 import { RegisterCarousel } from "../../features/RegisterCarousel";
 
@@ -86,6 +86,8 @@ export const Register = () => {
 
   return (
     <Container>
+      <BackgroundImage />
+
       {currentSlide != 0 && (
         <IconButton onClick={handleBackSlide}>{"<"}</IconButton>
       )}

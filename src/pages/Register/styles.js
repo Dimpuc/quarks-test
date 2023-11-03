@@ -6,6 +6,20 @@ export const Container = styled.div`
   align-items: center;
 `;
 
+export const BackgroundImage = styled.div`
+  background-image: linear-gradient(
+      180deg,
+      rgba(36, 37, 48, 0) 30.21%,
+      #242530 95.83%
+    ),
+    url("src/assets/icons/bgImageFull.svg");
+  height: 50vh;
+  width: 100%;
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+`;
+
 export const IconButton = styled.button`
   position: absolute;
   z-index: 100;

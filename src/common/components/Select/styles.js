@@ -26,22 +26,6 @@ export const StyledSelect = styled.select`
   box-shadow: 1px 1px 6px 0px #24253080 inset;
   border-radius: 10px;
   outline: none;
-  /* &::after {
-    content: "▼";
-    padding: 0 8px;
-    font-size: 12px;
-    position: absolute;
-    right: 8px;
-    top: 4px;
-    z-index: 1;
-    text-align: center;
-    width: 10%;
-    height: 100%;
-    pointer-events: none;
-    box-sizing: border-box;
-  } */
-
-  /* background-image: url("../../../assets/icons/bgImage.svg"); */
   background-repeat: no-repeat;
   background-position: 85%;
   background-size: 1.5rem 1.5rem;

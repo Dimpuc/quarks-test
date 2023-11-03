@@ -58,8 +58,8 @@ export const InputStyle = styled.input`
       linear-gradient(180deg, #ffb45c 0%, #ffa438 100%);
   }
 
-  ${({ hasError }) =>
-    hasError && {
+  ${({ error }) =>
+    error && {
       background:
         "linear-gradient(0deg,rgba(255, 94, 94, 1) 0%,rgba(208, 199, 199, 0.9626444327731093) 0%)",
       border: "1px solid #FF5E5E",

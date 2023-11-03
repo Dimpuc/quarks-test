@@ -1,7 +1,8 @@
-import PropTypes from "prop-types";
-import "./styles.css";
 import ReactReadMoreReadLess from "react-read-more-read-less";
+import PropTypes from "prop-types";
+
 import { StyledIcon, UsersDetails, UsersInfo, Wrapper } from "./styles";
+import "./styles.css";
 import Group from "../../../assets/icons/Group.svg";
 
 const FeedbackBlock = ({ icon, text, data, usersName }) => {
@@ -17,8 +18,8 @@ const FeedbackBlock = ({ icon, text, data, usersName }) => {
       </UsersInfo>
       <ReactReadMoreReadLess
         charLimit={200}
-        readMoreText={"Читать полностю"}
-        readLessText={"Скрыть"}
+        readMoreText="Читать полностю"
+        readLessText="Скрыть"
         readMoreClassName="read-more-less--more"
         readLessClassName="read-more-less--less"
       >
@@ -30,7 +31,7 @@ const FeedbackBlock = ({ icon, text, data, usersName }) => {
 
 FeedbackBlock.propTypes = {
   text: PropTypes.string,
-  icon: PropTypes.element,
+  icon: PropTypes.string,
   data: PropTypes.string,
   usersName: PropTypes.string,
 };

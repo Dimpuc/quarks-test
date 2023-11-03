@@ -37,11 +37,10 @@ export const Input = ({
           value={value}
           required={required}
           disabled={disabled}
-          endIcon={!endIcon}
           name={name}
           readOnly={readOnly}
-          hasError={errors[id]}
-          correct={!errors[id] && value?.length}
+          error={errors[id]}
+          correct={!errors[id] && value?.length.toString() ? value : null}
           onChange={onChange}
           type={type}
           {...register(name)}

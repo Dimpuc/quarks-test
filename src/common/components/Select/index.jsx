@@ -1,49 +1,31 @@
+/* eslint-disable react/prop-types */
 import PropTypes from "prop-types";
-import { Label, StyledSelect, Wrapper } from "./styles";
+import { StyledSelect } from "./styles";
 
-export const Select = ({ options, handelSelectDate, format }) => {
+export const Select = ({
+  options,
+  handelSelectDate,
+  register,
+  name,
+  errors,
+}) => {
   return (
-    <StyledSelect data-format={format} onChange={handelSelectDate}>
+    <StyledSelect
+      onChange={handelSelectDate}
+      error={errors[name]}
+      {...register(name)}
+    >
       {options.map((i, index) => (
-        <option value={i.value} key={index}>
+        <option
+          disabled={i.disabled}
+          defaultValue={i.defaultValue}
+          value={i.value}
+          key={index}
+        >
           {i.option}
         </option>
       ))}
     </StyledSelect>
-  );
-};
-
-export const SelectDate = () => {
-  return (
-    <Wrapper>
-      <Label>Дата рождения:</Label>
-      <div>
-        <Select
-          options={[
-            { value: 1, option: 1 },
-            { value: 1, option: 1 },
-            { value: 1, option: 1 },
-            { value: 1, option: 1 },
-          ]}
-        />
-        <Select
-          options={[
-            { value: 1, option: 1 },
-            { value: 1, option: 1 },
-            { value: 1, option: 1 },
-            { value: 1, option: 1 },
-          ]}
-        />
-        <Select
-          options={[
-            { value: 1, option: 1 },
-            { value: 1, option: 1 },
-            { value: 1, option: 1 },
-            { value: 1, option: 1 },
-          ]}
-        />
-      </div>
-    </Wrapper>
   );
 };
 

@@ -10,6 +10,22 @@ export const Wrapper = styled.div`
   gap: 12px;
 `;
 
+export const SelectDateWrapper = styled.div`
+  div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+`;
+
+export const SelectLabel = styled.label`
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 16.41px;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+`;
+
 export const TitleWrapper = styled.div`
   display: flex;
   gap: 4px;

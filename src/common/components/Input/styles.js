@@ -12,7 +12,7 @@ export const Label = styled.label`
 
 export const InputWrapper = styled.div`
   position: relative;
-  margin: 6px 0px 4px 0px;
+  margin: 6px 0px 0px 0px;
 `;
 
 export const ImgWrapper = styled.div`
@@ -21,14 +21,6 @@ export const ImgWrapper = styled.div`
     right: 16px;
     top: 10px;
   }
-`;
-
-export const ErrorMessage = styled.div`
-  color: #ff5e5e;
-  font-size: 1.2rem;
-  font-weight: 400;
-  line-height: 14.06px;
-  font-family: "Roboto", sans-serif;
 `;
 
 export const InputStyle = styled.input`

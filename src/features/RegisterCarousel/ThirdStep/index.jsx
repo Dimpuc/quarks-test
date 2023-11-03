@@ -1,23 +1,60 @@
 /* eslint-disable react/prop-types */
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 import { Input } from "../../../common/components/Input";
 import { Button } from "../../../common/components/Button";
-import { SelectDate } from "../../../common/components/Select";
+import { Select } from "../../../common/components/Select";
+import { ErrorMessage } from "../../../common/components/ErrorMessage";
+
 import { schemaRegister } from "./schema";
+import { dayOptions, formatErrors, monthOptions, yearOptions } from "./utils";
 
-import { Form, Title, TitleWrapper, Wrapper } from "./styles";
+import {
+  Form,
+  SelectDateWrapper,
+  SelectLabel,
+  Title,
+  TitleWrapper,
+  Wrapper,
+} from "./styles";
 
-const ThirdStep = ({ onSubmit }) => {
+const ThirdStep = ({ handleRegister }) => {
   const {
     register,
     handleSubmit,
+    control,
+    reset,
     formState: { errors },
   } = useForm({
     mode: "onSubmit",
     resolver: yupResolver(schemaRegister),
+    defaultValues: {
+      name: "",
+      email: "",
+      password: "",
+      day: "DD",
+      month: "MM",
+      year: "YYYY",
+    },
   });
+
+  const onSubmit = (data) => {
+    const birthday = {
+      day: data.day,
+      month: data.month,
+      year: data.year,
+    };
+
+    handleRegister({
+      name: data.name,
+      password: data.password,
+      email: data.email,
+      birthday,
+    });
+
+    reset();
+  };
 
   return (
     <Wrapper>
@@ -35,7 +72,51 @@ const ThirdStep = ({ onSubmit }) => {
           errors={errors}
           register={register}
         />
-        <SelectDate />
+
+        <SelectDateWrapper>
+          <SelectLabel>Дата рождения:</SelectLabel>
+          <div>
+            <Controller
+              name="day"
+              control={control}
+              render={({ field }) => (
+                <Select
+                  {...field}
+                  register={register}
+                  errors={errors}
+                  options={dayOptions}
+                />
+              )}
+            />
+            <Controller
+              name={"month"}
+              control={control}
+              render={({ field }) => (
+                <Select
+                  {...field}
+                  register={register}
+                  errors={errors}
+                  options={monthOptions}
+                />
+              )}
+            />
+            <Controller
+              name={"year"}
+              control={control}
+              render={({ field }) => (
+                <Select
+                  {...field}
+                  register={register}
+                  errors={errors}
+                  options={yearOptions}
+                />
+              )}
+            />
+          </div>
+          {formatErrors(errors) && (
+            <ErrorMessage message={formatErrors(errors)} />
+          )}
+        </SelectDateWrapper>
         <Input
           label="Придумайте пароль:"
           placeholder="Минимум 8 символов"

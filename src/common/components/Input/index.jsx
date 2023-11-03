@@ -1,16 +1,10 @@
 /* eslint-disable react/prop-types */
 import PropTypes from "prop-types";
-import {
-  Label,
-  Wrapper,
-  InputStyle,
-  ErrorMessage,
-  InputWrapper,
-  ImgWrapper,
-} from "./styles";
+import { Label, Wrapper, InputStyle, InputWrapper, ImgWrapper } from "./styles";
 
 import Validate from "../../../assets/icons/validated_icon.svg";
 import NonValidate from "../../../assets/icons/non_validation2_icon.svg";
+import { ErrorMessage } from "../ErrorMessage";
 
 export const Input = ({
   id,
@@ -58,7 +52,7 @@ export const Input = ({
         )}
       </InputWrapper>
       {errors?.[id]?.message && (
-        <ErrorMessage>{errors?.[id]?.message}</ErrorMessage>
+        <ErrorMessage message={errors?.[id]?.message} />
       )}
     </Wrapper>
   );

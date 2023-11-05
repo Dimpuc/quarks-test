@@ -31,6 +31,7 @@ export const FeedbackList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  margin: 0;
   padding: 0;
   list-style-type: none;
 `;

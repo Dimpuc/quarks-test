@@ -13,7 +13,8 @@ export const dayOptions = [
   {
     value: "",
     option: "DD",
-    defaultValue: "DD",
+    disabled: true,
+    selected: true,
   },
   { value: 1, option: "01" },
   { value: 2, option: "02" },
@@ -35,7 +36,8 @@ export const monthOptions = [
   {
     value: "",
     option: "MM",
-    defaultValue: "MM",
+    disabled: true,
+    selected: true,
   },
   { value: 1, option: "01" },
   { value: 2, option: "02" },
@@ -54,7 +56,8 @@ export const yearOptions = [
   {
     value: "",
     option: "YYYY",
-    defaultValue: "YYYY",
+    disabled: true,
+    selected: true,
   },
   { value: 2002, option: 2002 },
   { value: 2003, option: 2003 },

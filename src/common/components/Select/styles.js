@@ -9,32 +9,27 @@ export const StyledSelect = styled.select`
   box-shadow: 1px 1px 6px 0px #24253080 inset;
   border-radius: 10px;
   outline: none;
-  background-repeat: no-repeat;
-  background-position: 85%;
-  background-size: 1.5rem 1.5rem;
 
   font-weight: 400;
   font-size: 1.4rem;
   line-height: 16.41px;
-
+  font-family: "Roboto", sans-serif;
+  /* 
   background-image: url("src/assets/icons/arrow_icon.svg");
-  background-size: 24px;
   background-repeat: no-repeat;
-  background-position: 95% center;
+  background-position: 85%;
+  background-size: 2.4rem 2.4rem; */
 
   padding: 1rem 0.8rem 1rem 1.6rem;
+  color: ${({ value }) => (value ? "#242530" : "#8a8b95")};
 
-  &::placeholder {
-    color: #8a8b95;
-  }
-
-  -webkit-appearance: none;
+  /* -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;
+  appearance: none; */
 
   &:focus {
     box-shadow: 0px 0px 8px 0px #ffbb2f66;
-    border: 1px solid #ffa438 !important;
+    border: 1px solid #ffa438;
     background: linear-gradient(0deg, #f3f5f7, #f3f5f7),
       linear-gradient(180deg, #ffb45c 0%, #ffa438 100%);
   }

@@ -19,14 +19,12 @@ const FirstStep = ({ onClick }) => {
       <ButtonWrapper>
         <Button
           text="Я мужчина"
-          // size for icon
-          icon={<img src={MIcon} />}
+          icon={<img src={MIcon} width={12} height={22} />}
           onClick={() => onClick("men")}
         />
         <Button
           text="Я женщина"
-          // size for icon
-          icon={<img src={FIcon} />}
+          icon={<img src={FIcon} width={12} height={22} />}
           onClick={() => onClick("woman")}
         />
       </ButtonWrapper>

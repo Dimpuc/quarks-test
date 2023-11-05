@@ -8,16 +8,17 @@ export const Select = ({ options, register, name, error, inputRef, value }) => {
       id={name}
       name={name}
       error={error}
+      value={value}
       correct={!error && value}
       ref={inputRef}
       {...register(name)}
     >
       {options.map((i, index) => (
         <option
-          disabled={i.disabled}
-          defaultValue={i.defaultValue}
-          value={i.value}
           key={index}
+          disabled={i.disabled}
+          value={i.value}
+          selected={i.selected}
         >
           {i.option}
         </option>

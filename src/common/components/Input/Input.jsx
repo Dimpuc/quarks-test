@@ -43,12 +43,12 @@ export const Input = ({
         />
         {!errors && value ? (
           <ImgWrapper>
-            <img src={Validate} />
+            <img src={Validate} width={24} height={24} />
           </ImgWrapper>
         ) : null}
         {errors && (
           <ImgWrapper>
-            <img src={NonValidate} />
+            <img src={NonValidate} width={24} height={24} />
           </ImgWrapper>
         )}
       </InputWrapper>

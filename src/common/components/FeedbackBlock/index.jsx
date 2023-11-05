@@ -1,20 +1,16 @@
-import ReactReadMoreReadLess from "react-read-more-read-less";
 import PropTypes from "prop-types";
+import ReactReadMoreReadLess from "react-read-more-read-less";
 
+import Group from "../../../assets/icons/Group.svg";
 import { StyledIcon, UsersDetails, UsersInfo, Wrapper } from "./styles";
 import "./styles.css";
-import Group from "../../../assets/icons/Group.svg";
 
 const FeedbackBlock = ({ icon, text, data, usersName }) => {
   return (
     <Wrapper>
-      {/* size fro icon */}
-
-      <StyledIcon src={Group} alt="group" />
-      {/* rename this tag */}
+      <StyledIcon src={Group} alt="group" width={67} height={45} />
       <UsersInfo>
-        {/* size fro icon */}
-        <img src={icon} />
+        <img src={icon} width={62} height={32} />
         <UsersDetails>
           {usersName}
           <span>{data}</span>

@@ -5,7 +5,7 @@ import Group from "../../../assets/icons/Group.svg";
 import { StyledIcon, UsersDetails, UsersInfo, Wrapper } from "./styles";
 import "./styles.css";
 
-const FeedbackBlock = ({ icon, text, data, usersName }) => {
+export const FeedbackBlock = ({ icon, text, data, usersName }) => {
   return (
     <Wrapper>
       <StyledIcon src={Group} alt="group" width={67} height={45} />
@@ -36,5 +36,3 @@ FeedbackBlock.propTypes = {
   data: PropTypes.string,
   usersName: PropTypes.string,
 };
-
-export { FeedbackBlock };

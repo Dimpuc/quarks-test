@@ -1,18 +1,18 @@
 export const datingPurposeMock = [
   {
     id: 1,
-    datingPurpose: "дружба и общение",
+    value: "дружба и общение",
   },
   {
     id: 2,
-    datingPurpose: "долгосрочные отношения",
+    value: "долгосрочные отношения",
   },
   {
     id: 3,
-    datingPurpose: "создание семьи",
+    value: "создание семьи",
   },
   {
     id: 4,
-    datingPurpose: "встречи без обязательств",
+    value: "встречи без обязательств",
   },
 ];

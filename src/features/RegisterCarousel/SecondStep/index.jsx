@@ -3,19 +3,23 @@ import { Wrapper, Title, List, SmallText } from "./styles";
 import { Button } from "../../../common/components/Button";
 import { datingPurposeMock } from "./mocks";
 
-const SecondStep = ({ onClick }) => {
+export const SecondStep = ({ register, onNextPage }) => {
   return (
     <Wrapper>
       <Title>Цель знакомства:</Title>
-
-      {/* We need List? */}
       <List>
-        {datingPurposeMock.map(({ id, datingPurpose }) => (
+        {datingPurposeMock.map(({ id, value }) => (
           <li key={id}>
-            <Button
-              onClick={() => onClick(datingPurpose)}
-              text={datingPurpose}
+            <input
+              {...register("datingPurpose")}
+              id={value}
+              type="radio"
+              value={value}
+              style={{ display: "none" }}
             />
+            <Button onClick={onNextPage} tag="label" id={value}>
+              {value}
+            </Button>
           </li>
         ))}
       </List>
@@ -26,5 +30,3 @@ const SecondStep = ({ onClick }) => {
     </Wrapper>
   );
 };
-
-export { SecondStep };

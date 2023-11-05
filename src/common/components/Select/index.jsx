@@ -2,7 +2,7 @@
 import PropTypes from "prop-types";
 import { StyledSelect } from "./styles";
 
-export const Select = ({ options, register, name, error, inputRef, value }) => {
+export const Select = ({ options, register, name, error, value }) => {
   return (
     <StyledSelect
       id={name}
@@ -10,7 +10,6 @@ export const Select = ({ options, register, name, error, inputRef, value }) => {
       error={error}
       value={value}
       correct={!error && value}
-      ref={inputRef}
       {...register(name)}
     >
       {options.map((i, index) => (

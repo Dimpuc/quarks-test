@@ -14,18 +14,18 @@ export const StyledSelect = styled.select`
   font-size: 1.4rem;
   line-height: 16.41px;
   font-family: "Roboto", sans-serif;
-  /* 
+
   background-image: url("src/assets/icons/arrow_icon.svg");
   background-repeat: no-repeat;
   background-position: 85%;
-  background-size: 2.4rem 2.4rem; */
+  background-size: 2.4rem 2.4rem;
 
   padding: 1rem 0.8rem 1rem 1.6rem;
   color: ${({ value }) => (value ? "#242530" : "#8a8b95")};
 
-  /* -webkit-appearance: none;
+  -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none; */
+  appearance: none;
 
   &:focus {
     box-shadow: 0px 0px 8px 0px #ffbb2f66;

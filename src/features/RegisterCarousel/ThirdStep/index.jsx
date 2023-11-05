@@ -1,14 +1,10 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
-import { useForm, Controller } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-
-import { Input, InputPassword } from "../../../common/components/Input";
+import { Input } from "../../../common/components/Input";
 import { Button } from "../../../common/components/Button";
 import { Select } from "../../../common/components/Select";
-import { ErrorMessage } from "../../../common/components/ErrorMessage";
 
-import { schemaRegister } from "./schema";
+// import { ErrorMessage } from "../../../common/components/ErrorMessage";
+
 import {
   formatSelectErrors,
   dayOptions,
@@ -17,7 +13,7 @@ import {
 } from "./utils";
 
 import {
-  Form,
+  FormWrapper,
   SelectDateWrapper,
   SelectLabel,
   Title,
@@ -25,43 +21,7 @@ import {
   Wrapper,
 } from "./styles";
 
-const ThirdStep = ({ handleRegister }) => {
-  const [showPassword, setShowPassword] = useState(false);
-  const {
-    register,
-    handleSubmit,
-    control,
-    reset,
-    formState: { errors },
-  } = useForm({
-    mode: "onChange",
-    resolver: yupResolver(schemaRegister),
-    defaultValues: {
-      name: "",
-      email: "",
-      password: "",
-    },
-  });
-
-  const handelShowPassword = () => setShowPassword(!showPassword);
-
-  const onSubmit = (data) => {
-    const birthday = {
-      day: data.day,
-      month: data.month,
-      year: data.year,
-    };
-
-    handleRegister({
-      name: data.name,
-      password: data.password,
-      email: data.email,
-      birthday,
-    });
-
-    reset();
-  };
-
+export const ThirdStep = ({ register, errors, control }) => {
   return (
     <Wrapper>
       <TitleWrapper>
@@ -69,118 +29,61 @@ const ThirdStep = ({ handleRegister }) => {
         <span>Бистрая регистрация, чтоби перейти к общению</span>
       </TitleWrapper>
 
-      <Form onSubmit={handleSubmit(onSubmit)}>
-        <Controller
+      <FormWrapper>
+        <Input
+          label="Имя"
+          placeholder="Введите имя"
           name="name"
+          errors={errors["name"]}
           control={control}
-          render={({ field }) => (
-            <Input
-              label="Имя"
-              placeholder="Введите имя"
-              id="name"
-              type="text"
-              errors={errors["name"]}
-              register={register}
-              value={field.value}
-              inputRef={field.ref}
-              required
-              {...field}
-            />
-          )}
+          register={register}
+          required
         />
-
         <div>
           <SelectLabel>Дата рождения:</SelectLabel>
           <SelectDateWrapper>
-            <Controller
+            <Select
               name="day"
-              control={control}
-              render={({ field }) => (
-                <Select
-                  {...field}
-                  register={register}
-                  error={formatSelectErrors(errors)}
-                  inputRef={field.ref}
-                  options={dayOptions}
-                  value={field.value}
-                />
-              )}
+              register={register}
+              error={formatSelectErrors(errors)}
+              options={dayOptions}
             />
-            <Controller
+            <Select
               name="month"
-              control={control}
-              render={({ field }) => (
-                <Select
-                  {...field}
-                  register={register}
-                  error={formatSelectErrors(errors)}
-                  inputRef={field.ref}
-                  options={monthOptions}
-                  value={field.value}
-                />
-              )}
+              register={register}
+              error={formatSelectErrors(errors)}
+              options={monthOptions}
             />
-            <Controller
+            <Select
               name="year"
-              control={control}
-              render={({ field }) => (
-                <Select
-                  {...field}
-                  register={register}
-                  error={formatSelectErrors(errors)}
-                  inputRef={field.ref}
-                  options={yearOptions}
-                  value={field.value}
-                />
-              )}
+              register={register}
+              error={formatSelectErrors(errors)}
+              options={yearOptions}
             />
           </SelectDateWrapper>
-          {formatSelectErrors(errors) && (
-            <ErrorMessage message={formatSelectErrors(errors)} />
-          )}
         </div>
-
-        <Controller
+        <Input
+          label="Придумайте пароль:"
+          placeholder="Минимум 8 символов"
           name="password"
+          type="password"
+          errors={errors["password"]}
           control={control}
-          render={({ field }) => (
-            <InputPassword
-              label="Придумайте пароль:"
-              placeholder="Минимум 8 символов"
-              id="password"
-              type={showPassword ? "text" : "password"}
-              errors={errors["password"]}
-              register={register}
-              inputRef={field.ref}
-              showPassword={handelShowPassword}
-              value={field.value}
-              required
-              {...field}
-            />
-          )}
+          register={register}
+          required
         />
-        <Controller
+        <Input
+          label="Email"
+          placeholder="Введите свою почту"
           name="email"
+          type="email"
+          errors={errors["email"]}
           control={control}
-          render={({ field }) => (
-            <Input
-              label="Email"
-              placeholder="Введите свою почту"
-              id="email"
-              type="email"
-              errors={errors["email"]}
-              register={register}
-              value={field.value}
-              inputRef={field.ref}
-              required
-              {...field}
-            />
-          )}
+          register={register}
+          required
         />
-        <Button text="СОЗДАТЬ" type="submit" />
-      </Form>
+        <Button type="submit">СОЗДАТЬ</Button>
+      </FormWrapper>
     </Wrapper>
   );
 };
-
-export { ThirdStep };

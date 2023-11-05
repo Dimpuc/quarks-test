@@ -1,68 +1,77 @@
 import { useState } from "react";
 import { FirstStep } from "../../features/RegisterCarousel/FirstStep";
 import { SecondStep } from "../../features/RegisterCarousel/SecondStep";
-import { BackgroundImage, Container, IconButton } from "./styles";
+import { BackgroundImage, Container, IconButton, StyledForm } from "./styles";
 import { ThirdStep } from "../../features/RegisterCarousel/ThirdStep";
 import { RegisterCarousel } from "../../features/RegisterCarousel";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { schemaRegister } from "./schema";
 
 export const Register = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [user, setUser] = useState({});
+  const {
+    register,
+    handleSubmit,
+    control,
+    watch,
+    reset,
+    formState: { errors },
+  } = useForm({
+    mode: "onBlur",
+    resolver: yupResolver(schemaRegister),
+    defaultValues: {
+      name: "",
+      email: "",
+      password: "",
+    },
+  });
 
-  const handleRegister = (data) => {
-    const userUpdates = {
-      0: { gender: data },
-      1: { datingPurpose: data },
-    };
+  const allFields = watch();
 
-    setUser((prevUser) => ({
-      ...prevUser,
-      ...userUpdates[currentSlide],
-    }));
+  const onSubmit = () => {
+    // try => {call to api, reset form} catch => {show error}
+    console.log(allFields);
+    reset();
+  };
 
-    if (currentSlide < 2) {
-      setCurrentSlide((currentSlide + 1) % customComponents.length);
-    } else {
-      console.log({
-        ...user,
-        ...data,
-      });
-      // call to register api
-    }
+  const handelNextSlide = () => {
+    setCurrentSlide((currentSlide + 1) % customComponents.length);
   };
 
   const handleBackSlide = () => {
-    const userUpdates = {
-      1: { gender: "" },
-      2: { datingPurpose: "" },
-    };
-
-    setUser((prevUser) => ({
-      ...prevUser,
-      ...userUpdates[currentSlide],
-    }));
-
     setCurrentSlide((currentSlide - 1) % customComponents.length);
   };
 
   const customComponents = [
-    <FirstStep key={1} onClick={handleRegister} />,
-    <SecondStep key={2} onClick={handleRegister} />,
-    <ThirdStep key={3} handleRegister={handleRegister} />,
+    <FirstStep
+      key={1}
+      register={register}
+      slideId={currentSlide}
+      errors={errors}
+      onNextPage={handelNextSlide}
+    />,
+    <SecondStep
+      key={2}
+      register={register}
+      errors={errors}
+      onNextPage={handelNextSlide}
+    />,
+    <ThirdStep key={3} register={register} control={control} errors={errors} />,
   ];
 
   return (
     <Container>
       <BackgroundImage />
-
       {currentSlide != 0 && (
-        // Give styles and icon for this button
         <IconButton onClick={handleBackSlide}>{"<"}</IconButton>
       )}
-      <RegisterCarousel
-        currentSlide={currentSlide}
-        components={customComponents}
-      />
+      <StyledForm onSubmit={handleSubmit(onSubmit)}>
+        <RegisterCarousel
+          currentSlide={currentSlide}
+          components={customComponents}
+        />
+      </StyledForm>
     </Container>
   );
 };

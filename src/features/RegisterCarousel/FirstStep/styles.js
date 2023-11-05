@@ -7,6 +7,8 @@ export const Wrapper = styled.div`
   padding: 0 1rem;
   margin-top: 278px;
   box-sizing: border-box;
+  max-width: 400px;
+  width: 100%;
 `;
 
 export const Title = styled.h3`

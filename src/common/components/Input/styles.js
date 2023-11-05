@@ -23,18 +23,16 @@ export const ImgWrapper = styled.div`
   }
 `;
 
-export const ButtonWrapper = styled.div`
-  button {
-    position: absolute;
-    display: flex;
-    right: 16px;
-    padding: 0;
-    background: inherit;
-    cursor: pointer;
-    border: none;
-    margin: 0;
-    top: 10px;
-  }
+export const ShowPasswordBtn = styled.button`
+  position: absolute;
+  display: flex;
+  right: 16px;
+  padding: 0;
+  background: inherit;
+  cursor: pointer;
+  border: none;
+  margin: 0;
+  top: 10px;
 `;
 
 export const InputStyle = styled.input`
@@ -57,24 +55,28 @@ export const InputStyle = styled.input`
     color: #8a8b95;
   }
 
+  &:valid {
+    ${({ correct }) =>
+      correct && {
+        border: "1px solid #599F39",
+        background: "#CAD0C7",
+      }};
+  }
+
   &:focus {
     box-shadow: 0px 0px 8px 0px #ffbb2f66;
-    border: 1px solid #ffa438 !important;
+    border: 1px solid #ffa438;
     background: linear-gradient(0deg, #f3f5f7, #f3f5f7),
       linear-gradient(180deg, #ffb45c 0%, #ffa438 100%);
   }
 
-  ${({ correct }) =>
-    correct && {
-      border: "1px solid #599f39",
-      background:
-        "linear-gradient( 0deg,rgba(202, 208, 199, 1) 0%,rgba(89, 159, 57, 0.248358718487395) 0%)",
-    }};
+  &:focus ~ ${ImgWrapper} {
+    display: none;
+  }
 
   ${({ error }) =>
     error && {
-      background:
-        "linear-gradient(0deg,rgba(255, 94, 94, 1) 0%,rgba(208, 199, 199, 0.9626444327731093) 0%)",
-      border: "1px solid #FF5E5E",
+      border: " 1px solid #FF5E5E",
+      background: "#D0C7C7",
     }};
 `;

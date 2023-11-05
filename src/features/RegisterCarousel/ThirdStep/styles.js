@@ -7,6 +7,8 @@ export const Wrapper = styled.div`
   padding: 0px 2.4rem;
   box-sizing: border-box;
   margin-top: 305px;
+  max-width: 400px;
+  width: 100%;
   gap: 12px;
 `;
 
@@ -48,10 +50,9 @@ export const Title = styled.h3`
   color: #fff;
 `;
 
-export const Form = styled.form`
+export const FormWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 400px;
   gap: 18px;
   width: 100%;
 `;

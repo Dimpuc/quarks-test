@@ -28,7 +28,12 @@ export const IconButton = styled.button`
   top: 1rem;
   font-size: 2.5rem;
   cursor: pointer;
-  color: grey;
+  color: red;
   border: none;
   background-color: inherit;
+`;
+
+export const StyledForm = styled.form`
+  display: flex;
+  width: 100%;
 `;

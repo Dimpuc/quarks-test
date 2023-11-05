@@ -10,6 +10,8 @@ export const schemaRegister = yup.object().shape({
     .string()
     .min(2, "The name must be longer than 2 characters")
     .required("Name is required"),
+  gender: yup.string().required("Gender is required"),
+  datingPurpose: yup.string().required("Dating Purpose is required"),
   day: yup
     .number()
     .typeError("Введите дату рождения")

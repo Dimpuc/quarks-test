@@ -1,6 +1,9 @@
 import styled from "styled-components";
+import { createElement } from "react";
 
-export const StyledButton = styled.button`
+export const StyledButton = styled(({ tag, children, ...props }) =>
+  createElement(tag, props, children)
+)`
   display: flex;
   align-items: center;
   font-family: "Roboto", sans-serif;

@@ -2,20 +2,11 @@
 import { Footer } from "../Footer";
 import { StyledLayout } from "./styles";
 
-const Layout = ({ children }) => {
+export const Layout = ({ children }) => {
   return (
-    <StyledLayout
-      style={{
-        minHeight: "100vh",
-        position: "relative",
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
+    <StyledLayout>
       {children}
       <Footer />
     </StyledLayout>
   );
 };
-
-export { Layout };

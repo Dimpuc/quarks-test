@@ -6,6 +6,8 @@ export const Wrapper = styled.div`
   align-items: center;
   padding: 0px 1.6rem;
   margin-top: 335px;
+  max-width: 400px;
+  width: 100%;
 `;
 
 export const Title = styled.h3`
@@ -32,6 +34,12 @@ export const List = styled.ul`
     width: 100%;
     display: flex;
     justify-content: center;
+
+    label {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
   }
 `;
 

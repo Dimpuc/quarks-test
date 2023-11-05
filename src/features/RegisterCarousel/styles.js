@@ -20,6 +20,8 @@ export const CarouselContent = styled.div`
 
 export const CarouselSlide = styled.div`
   flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
   transition: transform 0.4s ease-in-out;
   transform: ${({ currentSlide }) => `translateX(-${currentSlide * 100}%)`};
 `;

@@ -1,6 +1,6 @@
-import UsersIcon from "../../../assets/icons/photo.svg";
-import MIcon from "../../../assets/icons/m_icon.svg";
-import FIcon from "../../../assets/icons/f_icon.svg";
+import UsersIcon from "@icons/photo.svg";
+import MIcon from "@icons/m_icon.svg";
+import FIcon from "@icons/f_icon.svg";
 
 export const feedbackListMocks = [
   {

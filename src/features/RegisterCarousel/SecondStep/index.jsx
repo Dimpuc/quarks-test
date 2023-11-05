@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { Button } from "../../../common/components/Button";
+import { Button } from "@components/Button";
 import { datingPurposeMock } from "./mocks";
 import { Wrapper, Title, List, SmallText } from "./styles";
 

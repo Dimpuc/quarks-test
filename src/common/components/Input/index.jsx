@@ -5,9 +5,9 @@ import { useFormState } from "react-hook-form";
 
 import { ErrorMessage } from "../ErrorMessage";
 
-import Validate from "../../../assets/icons/validated_icon.svg";
-import NonValidate from "../../../assets/icons/non_validation2_icon.svg";
-import HideIcon from "../../../assets/icons/hide_icon.svg";
+import Validate from "@icons/validated_icon.svg";
+import NonValidate from "@icons/non_validation2_icon.svg";
+import HideIcon from "@icons/hide_icon.svg";
 
 import {
   Label,

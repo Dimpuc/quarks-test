@@ -1,5 +1,5 @@
-import { Layout } from "../common/components/Layout";
-import { Register } from "../pages/Register";
+import { Layout } from "@components/Layout";
+import { Register } from "@pages/Register";
 
 function App() {
   return (

@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import ReactReadMoreReadLess from "react-read-more-read-less";
 
-import Group from "../../../assets/icons/Group.svg";
+import Group from "@icons/Group.svg";
 import { StyledIcon, UsersDetails, UsersInfo, Wrapper } from "./styles";
 import "./styles.css";
 

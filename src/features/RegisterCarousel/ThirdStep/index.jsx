@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
-import { Input } from "../../../common/components/Input";
-import { Button } from "../../../common/components/Button";
-import { Select } from "../../../common/components/Select";
-import { ErrorMessage } from "../../../common/components/ErrorMessage";
+import { Input } from "@components/Input";
+import { Button } from "@components/Button";
+import { Select } from "@components/Select";
+import { ErrorMessage } from "@components/ErrorMessage";
 
 import {
   formatSelectErrors,

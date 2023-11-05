@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-import { Button } from "../../../common/components/Button";
-import { FeedbackBlock } from "../../../common/components/FeedbackBlock";
+import { Button } from "@components/Button";
+import { FeedbackBlock } from "@components/FeedbackBlock";
 
 import { feedbackListMocks, genderMocks } from "./mocks";
 

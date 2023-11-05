@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 
-import { FirstStep } from "../../features/RegisterCarousel/FirstStep";
-import { SecondStep } from "../../features/RegisterCarousel/SecondStep";
-import { ThirdStep } from "../../features/RegisterCarousel/ThirdStep";
-import { RegisterCarousel } from "../../features/RegisterCarousel";
+import { FirstStep } from "@features/RegisterCarousel/FirstStep";
+import { SecondStep } from "@features/RegisterCarousel/SecondStep";
+import { ThirdStep } from "@features/RegisterCarousel/ThirdStep";
+import { RegisterCarousel } from "@features/RegisterCarousel";
 
 import { yupResolver } from "@hookform/resolvers/yup";
 import { schemaRegister } from "./schema";

@@ -39,6 +39,13 @@ export const StyledSelect = styled.select`
       linear-gradient(180deg, #ffb45c 0%, #ffa438 100%);
   }
 
+  ${({ correct }) =>
+    correct && {
+      border: "1px solid #599f39",
+      background:
+        "linear-gradient( 0deg,rgba(202, 208, 199, 1) 0%,rgba(89, 159, 57, 0.248358718487395) 0%)",
+    }};
+
   ${({ error }) =>
     error && {
       background:

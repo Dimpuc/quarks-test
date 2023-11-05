@@ -6,10 +6,7 @@ const RegisterCarousel = ({ components, currentSlide }) => {
     <CarouselWrapper>
       <CarouselContent>
         {components.map((component, index) => (
-          <CarouselSlide
-            key={index}
-            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-          >
+          <CarouselSlide key={index} currentSlide={currentSlide}>
             {component}
           </CarouselSlide>
         ))}

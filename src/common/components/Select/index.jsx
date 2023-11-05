@@ -2,17 +2,14 @@
 import PropTypes from "prop-types";
 import { StyledSelect } from "./styles";
 
-export const Select = ({
-  options,
-  handelSelectDate,
-  register,
-  name,
-  errors,
-}) => {
+export const Select = ({ options, register, name, error, inputRef, value }) => {
   return (
     <StyledSelect
-      onChange={handelSelectDate}
-      error={errors[name]}
+      id={name}
+      name={name}
+      error={error}
+      correct={!error && value}
+      ref={inputRef}
       {...register(name)}
     >
       {options.map((i, index) => (

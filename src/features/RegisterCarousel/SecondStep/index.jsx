@@ -7,6 +7,8 @@ const SecondStep = ({ onClick }) => {
   return (
     <Wrapper>
       <Title>Цель знакомства:</Title>
+
+      {/* We need List? */}
       <List>
         {datingPurposeMock.map(({ id, datingPurpose }) => (
           <li key={id}>
@@ -17,6 +19,7 @@ const SecondStep = ({ onClick }) => {
           </li>
         ))}
       </List>
+
       <SmallText>
         Чтобы идеально подобрать для вас пару, ответьте на несколько вопросов
       </SmallText>

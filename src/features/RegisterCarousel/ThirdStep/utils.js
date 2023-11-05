@@ -1,5 +1,5 @@
 //hardcode
-export const formatErrors = (errors) => {
+export const formatSelectErrors = (errors) => {
   if (errors["day"]) {
     return errors["day"]?.message;
   } else if (errors["month"]) {
@@ -11,7 +11,7 @@ export const formatErrors = (errors) => {
 
 export const dayOptions = [
   {
-    value: "DD",
+    value: "",
     option: "DD",
     defaultValue: "DD",
   },
@@ -33,7 +33,7 @@ export const dayOptions = [
 
 export const monthOptions = [
   {
-    value: "MM",
+    value: "",
     option: "MM",
     defaultValue: "MM",
   },
@@ -52,7 +52,7 @@ export const monthOptions = [
 ];
 export const yearOptions = [
   {
-    value: "YYYY",
+    value: "",
     option: "YYYY",
     defaultValue: "YYYY",
   },

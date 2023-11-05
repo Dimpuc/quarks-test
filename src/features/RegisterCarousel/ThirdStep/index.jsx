@@ -1,14 +1,20 @@
 /* eslint-disable react/prop-types */
+import { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
-import { Input } from "../../../common/components/Input";
+import { Input, InputPassword } from "../../../common/components/Input";
 import { Button } from "../../../common/components/Button";
 import { Select } from "../../../common/components/Select";
 import { ErrorMessage } from "../../../common/components/ErrorMessage";
 
 import { schemaRegister } from "./schema";
-import { dayOptions, formatErrors, monthOptions, yearOptions } from "./utils";
+import {
+  formatSelectErrors,
+  dayOptions,
+  monthOptions,
+  yearOptions,
+} from "./utils";
 
 import {
   Form,
@@ -20,6 +26,7 @@ import {
 } from "./styles";
 
 const ThirdStep = ({ handleRegister }) => {
+  const [showPassword, setShowPassword] = useState(false);
   const {
     register,
     handleSubmit,
@@ -27,17 +34,16 @@ const ThirdStep = ({ handleRegister }) => {
     reset,
     formState: { errors },
   } = useForm({
-    mode: "onSubmit",
+    mode: "onChange",
     resolver: yupResolver(schemaRegister),
     defaultValues: {
       name: "",
       email: "",
       password: "",
-      day: "DD",
-      month: "MM",
-      year: "YYYY",
     },
   });
+
+  const handelShowPassword = () => setShowPassword(!showPassword);
 
   const onSubmit = (data) => {
     const birthday = {
@@ -62,20 +68,30 @@ const ThirdStep = ({ handleRegister }) => {
         <Title>Создать анкету</Title>
         <span>Бистрая регистрация, чтоби перейти к общению</span>
       </TitleWrapper>
+
       <Form onSubmit={handleSubmit(onSubmit)}>
-        <Input
-          label="Имя"
-          placeholder="Введите имя"
+        <Controller
           name="name"
-          id="name"
-          type="text"
-          errors={errors}
-          register={register}
+          control={control}
+          render={({ field }) => (
+            <Input
+              label="Имя"
+              placeholder="Введите имя"
+              id="name"
+              type="text"
+              errors={errors["name"]}
+              register={register}
+              value={field.value}
+              inputRef={field.ref}
+              required
+              {...field}
+            />
+          )}
         />
 
-        <SelectDateWrapper>
+        <div>
           <SelectLabel>Дата рождения:</SelectLabel>
-          <div>
+          <SelectDateWrapper>
             <Controller
               name="day"
               control={control}
@@ -83,57 +99,83 @@ const ThirdStep = ({ handleRegister }) => {
                 <Select
                   {...field}
                   register={register}
-                  errors={errors}
+                  error={formatSelectErrors(errors)}
+                  inputRef={field.ref}
                   options={dayOptions}
+                  value={field.value}
                 />
               )}
             />
             <Controller
-              name={"month"}
+              name="month"
               control={control}
               render={({ field }) => (
                 <Select
                   {...field}
                   register={register}
-                  errors={errors}
+                  error={formatSelectErrors(errors)}
+                  inputRef={field.ref}
                   options={monthOptions}
+                  value={field.value}
                 />
               )}
             />
             <Controller
-              name={"year"}
+              name="year"
               control={control}
               render={({ field }) => (
                 <Select
                   {...field}
                   register={register}
-                  errors={errors}
+                  error={formatSelectErrors(errors)}
+                  inputRef={field.ref}
                   options={yearOptions}
+                  value={field.value}
                 />
               )}
             />
-          </div>
-          {formatErrors(errors) && (
-            <ErrorMessage message={formatErrors(errors)} />
+          </SelectDateWrapper>
+          {formatSelectErrors(errors) && (
+            <ErrorMessage message={formatSelectErrors(errors)} />
           )}
-        </SelectDateWrapper>
-        <Input
-          label="Придумайте пароль:"
-          placeholder="Минимум 8 символов"
+        </div>
+
+        <Controller
           name="password"
-          id="password"
-          type="password"
-          errors={errors}
-          register={register}
+          control={control}
+          render={({ field }) => (
+            <InputPassword
+              label="Придумайте пароль:"
+              placeholder="Минимум 8 символов"
+              id="password"
+              type={showPassword ? "text" : "password"}
+              errors={errors["password"]}
+              register={register}
+              inputRef={field.ref}
+              showPassword={handelShowPassword}
+              value={field.value}
+              required
+              {...field}
+            />
+          )}
         />
-        <Input
-          label="Email"
-          placeholder="Введите свою почту"
+        <Controller
           name="email"
-          id="email"
-          type="email"
-          errors={errors}
-          register={register}
+          control={control}
+          render={({ field }) => (
+            <Input
+              label="Email"
+              placeholder="Введите свою почту"
+              id="email"
+              type="email"
+              errors={errors["email"]}
+              register={register}
+              value={field.value}
+              inputRef={field.ref}
+              required
+              {...field}
+            />
+          )}
         />
         <Button text="СОЗДАТЬ" type="submit" />
       </Form>

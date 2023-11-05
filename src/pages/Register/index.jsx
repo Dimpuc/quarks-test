@@ -56,6 +56,7 @@ export const Register = () => {
       <BackgroundImage />
 
       {currentSlide != 0 && (
+        // Give styles and icon for this button
         <IconButton onClick={handleBackSlide}>{"<"}</IconButton>
       )}
       <RegisterCarousel

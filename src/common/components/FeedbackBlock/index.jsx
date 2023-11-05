@@ -8,14 +8,19 @@ import Group from "../../../assets/icons/Group.svg";
 const FeedbackBlock = ({ icon, text, data, usersName }) => {
   return (
     <Wrapper>
+      {/* size fro icon */}
+
       <StyledIcon src={Group} alt="group" />
+      {/* rename this tag */}
       <UsersInfo>
+        {/* size fro icon */}
         <img src={icon} />
         <UsersDetails>
           {usersName}
           <span>{data}</span>
         </UsersDetails>
       </UsersInfo>
+
       <ReactReadMoreReadLess
         charLimit={200}
         readMoreText="Читать полностю"

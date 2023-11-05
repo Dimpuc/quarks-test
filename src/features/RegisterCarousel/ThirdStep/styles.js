@@ -11,11 +11,9 @@ export const Wrapper = styled.div`
 `;
 
 export const SelectDateWrapper = styled.div`
-  div {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
+  display: flex;
+  align-items: center;
+  gap: 8px;
 `;
 
 export const SelectLabel = styled.label`

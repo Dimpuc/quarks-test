@@ -15,7 +15,7 @@ export const StyledSelect = styled.select`
   line-height: 16.41px;
   font-family: "Roboto", sans-serif;
 
-  background-image: url("src/assets/icons/arrow_icon.svg") !important;
+  background-image: url("arrow_icon.svg") !important;
   background-repeat: no-repeat !important;
   background-position: 95% !important;
   background-size: 2.4rem 2.4rem !important;

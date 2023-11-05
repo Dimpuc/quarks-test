@@ -13,7 +13,7 @@ export const BackgroundImage = styled.div`
       rgba(36, 37, 48, 0) 30.21%,
       #242530 95.83%
     ),
-    url("src/assets/icons/bgImageFull.svg");
+    url("bgImageFull.svg");
   height: 60vh;
   width: 100%;
   position: absolute;

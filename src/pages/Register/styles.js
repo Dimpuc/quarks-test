@@ -14,7 +14,7 @@ export const BackgroundImage = styled.div`
       #242530 95.83%
     ),
     url("src/assets/icons/bgImageFull.svg");
-  height: 50vh;
+  height: 60vh;
   width: 100%;
   position: absolute;
   background-size: cover;
@@ -36,4 +36,5 @@ export const IconButton = styled.button`
 export const StyledForm = styled.form`
   display: flex;
   width: 100%;
+  margin-top: 45vh;
 `;

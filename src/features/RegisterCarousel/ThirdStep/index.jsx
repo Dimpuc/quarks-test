@@ -2,8 +2,7 @@
 import { Input } from "../../../common/components/Input";
 import { Button } from "../../../common/components/Button";
 import { Select } from "../../../common/components/Select";
-
-// import { ErrorMessage } from "../../../common/components/ErrorMessage";
+import { ErrorMessage } from "../../../common/components/ErrorMessage";
 
 import {
   formatSelectErrors,
@@ -47,20 +46,26 @@ export const ThirdStep = ({ register, errors, control }) => {
               register={register}
               error={formatSelectErrors(errors)}
               options={dayOptions}
+              control={control}
             />
             <Select
               name="month"
               register={register}
               error={formatSelectErrors(errors)}
               options={monthOptions}
+              control={control}
             />
             <Select
               name="year"
               register={register}
               error={formatSelectErrors(errors)}
               options={yearOptions}
+              control={control}
             />
           </SelectDateWrapper>
+          {formatSelectErrors(errors) && (
+            <ErrorMessage message={formatSelectErrors(errors)} />
+          )}
         </div>
         <Input
           label="Придумайте пароль:"

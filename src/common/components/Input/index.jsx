@@ -1,20 +1,21 @@
 /* eslint-disable react/prop-types */
 import PropTypes from "prop-types";
+import { useState } from "react";
+import { useFormState } from "react-hook-form";
+
+import { ErrorMessage } from "../ErrorMessage";
+
+import Validate from "../../../assets/icons/validated_icon.svg";
+import NonValidate from "../../../assets/icons/non_validation2_icon.svg";
+import HideIcon from "../../../assets/icons/hide_icon.svg";
+
 import {
   Label,
-  Wrapper,
   InputStyle,
   InputWrapper,
   ImgWrapper,
   ShowPasswordBtn,
 } from "./styles";
-
-import Validate from "../../../assets/icons/validated_icon.svg";
-import NonValidate from "../../../assets/icons/non_validation2_icon.svg";
-import { ErrorMessage } from "../ErrorMessage";
-import { useFormState } from "react-hook-form";
-import HideIcon from "../../../assets/icons/hide_icon.svg";
-import { useState } from "react";
 
 export const Input = ({
   label,
@@ -63,7 +64,7 @@ export const Input = ({
   };
 
   return (
-    <Wrapper>
+    <div>
       {label && <Label htmlFor={name}>{label}</Label>}
       <InputWrapper>
         <InputStyle
@@ -84,7 +85,7 @@ export const Input = ({
         {renderIcons()}
       </InputWrapper>
       {errors?.message && <ErrorMessage message={errors?.message} />}
-    </Wrapper>
+    </div>
   );
 };
 

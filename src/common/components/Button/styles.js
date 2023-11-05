@@ -12,7 +12,7 @@ export const StyledButton = styled(({ tag, children, ...props }) =>
   border: none;
   border-radius: 10px;
   padding-top: 0.9rem;
-  gap: 1.4rem;
+  gap: 14px;
   cursor: pointer;
   padding-bottom: calc(0.9rem + 1px);
   max-width: 400px;

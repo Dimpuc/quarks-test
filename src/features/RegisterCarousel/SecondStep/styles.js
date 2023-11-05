@@ -5,7 +5,6 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 0px 1.6rem;
-  margin-top: 335px;
   max-width: 400px;
   width: 100%;
 `;
@@ -25,7 +24,7 @@ export const List = styled.ul`
   width: 100%;
   flex-direction: column;
   align-items: center;
-  gap: 1.4rem;
+  gap: 14px;
   margin: 1.6rem 0px 0px 0px;
   padding: 0;
   list-style-type: none;
@@ -47,6 +46,7 @@ export const SmallText = styled.p`
   font-size: 1.4rem;
   font-weight: 400;
   line-height: 16.41px;
+  opacity: 0.6;
   text-align: center;
   color: #aab2bd;
   margin: 5.9rem 0px 0px 0px;

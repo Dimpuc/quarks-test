@@ -1,12 +1,15 @@
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+
 import { FirstStep } from "../../features/RegisterCarousel/FirstStep";
 import { SecondStep } from "../../features/RegisterCarousel/SecondStep";
-import { BackgroundImage, Container, IconButton, StyledForm } from "./styles";
 import { ThirdStep } from "../../features/RegisterCarousel/ThirdStep";
 import { RegisterCarousel } from "../../features/RegisterCarousel";
-import { useForm } from "react-hook-form";
+
 import { yupResolver } from "@hookform/resolvers/yup";
 import { schemaRegister } from "./schema";
+
+import { BackgroundImage, Container, IconButton, StyledForm } from "./styles";
 
 export const Register = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -18,19 +21,21 @@ export const Register = () => {
     reset,
     formState: { errors },
   } = useForm({
-    mode: "onBlur",
+    mode: "onChange",
     resolver: yupResolver(schemaRegister),
     defaultValues: {
       name: "",
       email: "",
       password: "",
+      day: "DD",
+      month: "MM",
+      year: "YYYY",
     },
   });
 
-  const allFields = watch();
-
   const onSubmit = () => {
     // try => {call to api, reset form} catch => {show error}
+    const allFields = watch();
     console.log(allFields);
     reset();
   };
@@ -47,7 +52,7 @@ export const Register = () => {
     <FirstStep
       key={1}
       register={register}
-      slideId={currentSlide}
+      currentSlide={currentSlide}
       errors={errors}
       onNextPage={handelNextSlide}
     />,

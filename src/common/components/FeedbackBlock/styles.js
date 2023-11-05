@@ -23,7 +23,7 @@ export const StyledIcon = styled.img`
 
 export const UsersInfo = styled.div`
   display: flex;
-  gap: 1rem;
+  gap: 10px;
   align-items: center;
   margin-bottom: 1.2rem;
 `;

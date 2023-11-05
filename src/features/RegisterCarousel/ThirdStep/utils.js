@@ -11,7 +11,7 @@ export const formatSelectErrors = (errors) => {
 
 export const dayOptions = [
   {
-    value: "",
+    value: "DD",
     option: "DD",
     disabled: true,
     selected: true,
@@ -34,7 +34,7 @@ export const dayOptions = [
 
 export const monthOptions = [
   {
-    value: "",
+    value: "MM",
     option: "MM",
     disabled: true,
     selected: true,
@@ -54,7 +54,7 @@ export const monthOptions = [
 ];
 export const yearOptions = [
   {
-    value: "",
+    value: "YYYY",
     option: "YYYY",
     disabled: true,
     selected: true,

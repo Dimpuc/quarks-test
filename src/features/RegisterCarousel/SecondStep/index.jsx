@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
-import { Wrapper, Title, List, SmallText } from "./styles";
 import { Button } from "../../../common/components/Button";
 import { datingPurposeMock } from "./mocks";
+import { Wrapper, Title, List, SmallText } from "./styles";
 
 export const SecondStep = ({ register, onNextPage }) => {
   return (

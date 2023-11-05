@@ -1,6 +1,9 @@
 /* eslint-disable react/prop-types */
 import { Button } from "../../../common/components/Button";
 import { FeedbackBlock } from "../../../common/components/FeedbackBlock";
+
+import { feedbackListMocks, genderMocks } from "./mocks";
+
 import {
   ButtonWrapper,
   FeedbackList,
@@ -9,15 +12,13 @@ import {
   Wrapper,
 } from "./styles";
 
-import { feedbackListMocks, genderMocks } from "./mocks";
-
-export const FirstStep = ({ onNextPage, register, slideId }) => {
+export const FirstStep = ({ onNextPage, register, currentSlide }) => {
   return (
     <Wrapper>
       <Title>Наибольшая база анкет для знакомств</Title>
       <ButtonWrapper>
         {genderMocks.map(({ id, value, icon }) => (
-          <>
+          <div style={{ width: "100%" }} key={id}>
             <input
               key={id}
               {...register("gender")}
@@ -34,10 +35,10 @@ export const FirstStep = ({ onNextPage, register, slideId }) => {
             >
               {value}
             </Button>
-          </>
+          </div>
         ))}
       </ButtonWrapper>
-      {slideId === 0 && (
+      {currentSlide === 0 && (
         <FeedbackList>
           {feedbackListMocks.map(({ usersName, icon, text, data }, index) => (
             <ListItem key={index}>

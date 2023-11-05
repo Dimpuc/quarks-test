@@ -15,13 +15,14 @@ export const StyledSelect = styled.select`
   line-height: 16.41px;
   font-family: "Roboto", sans-serif;
 
-  background-image: url("src/assets/icons/arrow_icon.svg");
-  background-repeat: no-repeat;
-  background-position: 85%;
-  background-size: 2.4rem 2.4rem;
+  background-image: url("src/assets/icons/arrow_icon.svg") !important;
+  background-repeat: no-repeat !important;
+  background-position: 95% !important;
+  background-size: 2.4rem 2.4rem !important;
 
-  padding: 1rem 0.8rem 1rem 1.6rem;
-  color: ${({ value }) => (value ? "#242530" : "#8a8b95")};
+  padding: calc(1rem + 3px) 16px calc(1rem + 4px) 16px;
+
+  color: ${({ dirty }) => (dirty ? "#242530" : "#8a8b95")};
 
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -29,22 +30,21 @@ export const StyledSelect = styled.select`
 
   &:focus {
     box-shadow: 0px 0px 8px 0px #ffbb2f66;
-    border: 1px solid #ffa438;
-    background: linear-gradient(0deg, #f3f5f7, #f3f5f7),
-      linear-gradient(180deg, #ffb45c 0%, #ffa438 100%);
+    border: 1px solid #ffb45c;
+    background: #f3f5f6;
   }
 
-  ${({ correct }) =>
-    correct && {
-      border: "1px solid #599f39",
-      background:
-        "linear-gradient( 0deg,rgba(202, 208, 199, 1) 0%,rgba(89, 159, 57, 0.248358718487395) 0%)",
-    }};
+  &:valid {
+    ${({ correct }) =>
+      correct && {
+        border: "1px solid #599F39",
+        background: "#CAD0C7",
+      }};
+  }
 
   ${({ error }) =>
     error && {
-      background:
-        "linear-gradient(0deg,rgba(255, 94, 94, 1) 0%,rgba(208, 199, 199, 0.9626444327731093) 0%)",
-      border: "1px solid #FF5E5E",
+      border: " 1px solid #FF5E5E",
+      background: "#D0C7C7",
     }};
 `;

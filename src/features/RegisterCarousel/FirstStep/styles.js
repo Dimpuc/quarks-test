@@ -5,7 +5,6 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 0 1rem;
-  margin-top: 278px;
   box-sizing: border-box;
   max-width: 400px;
   width: 100%;
@@ -24,15 +23,15 @@ export const ButtonWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.2rem;
+  gap: 12px;
   width: 100%;
-  margin-top: 1.2rem;
-  margin-bottom: 2rem;
+  margin-top: 2.2vh;
+  margin-bottom: 4.7vh;
 `;
 export const FeedbackList = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 20px;
   margin: 0;
   padding: 0;
   list-style-type: none;

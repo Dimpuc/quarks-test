@@ -1,61 +1,91 @@
 /* eslint-disable react/prop-types */
 import PropTypes from "prop-types";
+import { useState } from "react";
+import { useFormState } from "react-hook-form";
+
+import { ErrorMessage } from "../ErrorMessage";
+
+import Validate from "@icons/validated_icon.svg";
+import NonValidate from "@icons/non_validation2_icon.svg";
+import HideIcon from "@icons/hide_icon.svg";
+
 import {
   Label,
-  Wrapper,
   InputStyle,
-  ErrorMessage,
   InputWrapper,
   ImgWrapper,
+  ShowPasswordBtn,
 } from "./styles";
 
-import Validate from "../../../assets/icons/validated_icon.svg";
-import NonValidate from "../../../assets/icons/non_validation2_icon.svg";
-
 export const Input = ({
-  id,
   label,
   placeholder,
   value,
-  endIcon,
-  type,
+  type = "text",
   onChange,
+  control,
+  register,
   errors,
+  name,
   required = false,
   readOnly,
   disabled,
 }) => {
+  const [showPassword, setShowPassword] = useState(false);
+  const { dirtyFields } = useFormState({ control });
+
+  const onShowPassword = () => setShowPassword(!showPassword);
+
+  const renderIcons = () => {
+    switch (type) {
+      case "password": {
+        return (
+          <ShowPasswordBtn type="button" onClick={onShowPassword}>
+            <img src={HideIcon} width={24} height={24} />
+          </ShowPasswordBtn>
+        );
+      }
+      default: {
+        if (!errors && dirtyFields[name]) {
+          return (
+            <ImgWrapper>
+              <img src={Validate} width={24} height={24} />
+            </ImgWrapper>
+          );
+        } else if (errors) {
+          return (
+            <ImgWrapper>
+              <img src={NonValidate} width={24} height={24} />
+            </ImgWrapper>
+          );
+        }
+      }
+    }
+  };
+
   return (
-    <Wrapper>
-      {label && <Label htmlFor={id}>{label}</Label>}
+    <div>
+      {label && <Label htmlFor={name}>{label}</Label>}
       <InputWrapper>
         <InputStyle
-          id={id}
+          id={name}
           placeholder={placeholder}
           value={value}
           required={required}
           disabled={disabled}
-          endIcon={!endIcon}
+          name={name}
           readOnly={readOnly}
-          hasError={errors[id]}
-          correct={!errors[id] && value?.length}
+          error={errors}
+          correct={!errors}
           onChange={onChange}
-          type={type}
+          type={showPassword ? "text" : type}
+          autoComplete="off"
+          {...register(name)}
         />
-        {endIcon && <ImgWrapper>{endIcon}</ImgWrapper>}
-        {!errors[id] && value?.length && !endIcon ? (
-          <ImgWrapper>
-            <img src={Validate} />
-          </ImgWrapper>
-        ) : null}
-        {errors[id] && !endIcon && (
-          <ImgWrapper>
-            <img src={NonValidate} />
-          </ImgWrapper>
-        )}
+        {renderIcons()}
       </InputWrapper>
-      {errors?.[id]?.message && <ErrorMessage>error</ErrorMessage>}
-    </Wrapper>
+      {errors?.message && <ErrorMessage message={errors?.message} />}
+    </div>
   );
 };
 
@@ -68,7 +98,6 @@ Input.propTypes = {
   onChange: PropTypes.func,
   error: PropTypes.object,
   required: PropTypes.bool,
-  endIcon: PropTypes.element,
   readOnly: PropTypes.bool,
   disabled: PropTypes.bool,
 };

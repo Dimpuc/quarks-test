@@ -1,24 +1,26 @@
 import PropTypes from "prop-types";
-import "./styles.css";
 import ReactReadMoreReadLess from "react-read-more-read-less";
-import { StyledIcon, UsersDetails, UsersInfo, Wrapper } from "./styles";
-import Group from "../../../assets/icons/Group.svg";
 
-const FeedbackBlock = ({ icon, text, data, usersName }) => {
+import Group from "@icons/Group.svg";
+import { StyledIcon, UsersDetails, UsersInfo, Wrapper } from "./styles";
+import "./styles.css";
+
+export const FeedbackBlock = ({ icon, text, data, usersName }) => {
   return (
     <Wrapper>
-      <StyledIcon src={Group} alt="group" />
+      <StyledIcon src={Group} alt="group" width={67} height={45} />
       <UsersInfo>
-        {icon}
+        <img src={icon} width={62} height={32} />
         <UsersDetails>
           {usersName}
           <span>{data}</span>
         </UsersDetails>
       </UsersInfo>
+
       <ReactReadMoreReadLess
         charLimit={200}
-        readMoreText={"Read more"}
-        readLessText={"Read less"}
+        readMoreText="Читать полностю"
+        readLessText="Скрыть"
         readMoreClassName="read-more-less--more"
         readLessClassName="read-more-less--less"
       >
@@ -30,9 +32,7 @@ const FeedbackBlock = ({ icon, text, data, usersName }) => {
 
 FeedbackBlock.propTypes = {
   text: PropTypes.string,
-  icon: PropTypes.element,
+  icon: PropTypes.string,
   data: PropTypes.string,
   usersName: PropTypes.string,
 };
-
-export { FeedbackBlock };
